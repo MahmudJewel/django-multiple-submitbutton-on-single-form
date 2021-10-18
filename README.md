@@ -6,8 +6,9 @@ if request.method=='POST':
             	pass
 	elif 'Upper' in request.POST:
            	pass
-```
+``` 
 Where 'Lower' and 'Upper' is the submit button’s name
+
 ## ii) Method-2
 ```
 def clean(self):
