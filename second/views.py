@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+print('hello')
 # Create your views here.
 def home(request):
     txt,originaltxt='',''
@@ -16,6 +16,11 @@ def home(request):
 
         elif 'Capitalize' in request.POST:
             txt=originaltxt.capitalize()
+        
+        elif 'WordCount' in request.POST:
+            txt=f"Total word = {len(originaltxt.strip().split(' '))}"
+            #print(type(originaltxt))
+
 
     context={
         'txt': txt,
