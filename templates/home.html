@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="text-align: center;" class="container" >
+    <div class="mb-3">
+      
+      <form method="POST" > 
+        <!--Input Text or Generated text-->
+      <div class="mb-3">
+        <label class="form-label">Enter text for converting</label>
+        <textarea class="form-control" name="tarea" rows="5">{% lorem 1 b random %}</textarea>
+      </div>
+
+      <!--button-->
+      <div>
+          {% csrf_token %}
+          <button class="btn btn-primary" type="submit" name='Capitalize'>Capitalize</button>
+          <button class="btn btn-primary" type="submit" name='Upper'>Upper Case</button>
+          <button class="btn btn-primary" type="submit" name='Lower'>Lower Case</button>
+          <button class="btn btn-primary" type="submit" name='Title'>Title</button>          
+          <button class="btn btn-primary" type="submit" name='WordCount'>Word Count</button>
+  
+        </div>
+      </form>
+    <br><br>
+
+    <!--Original & Formatted Text part-->
+    <div class="mb-3">
+      <div class="row">
+        <!--Original Text-->
+        <div class="col-6">
+          <label for="exampleFormControlTextarea1" class="form-label">Original Text</label>
+      <textarea class="form-control" rows="6" 
+      disabled='disabled'>{{originaltxt}}
+      </textarea>
+        </div>
+
+        <!--Formatted Text-->
+        <div class="col-6">
+          <label for="exampleFormControlTextarea1" class="form-label">Formatted Text</label>
+
+          <textarea class="form-control" rows="6" 
+          disabled='disabled'>{{txt}}</textarea>
+
+        </div>
+      </div>
+      
+    </div> 
+</div>
+</div>
+{% endblock content %}
+
